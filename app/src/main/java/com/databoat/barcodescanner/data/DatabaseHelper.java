@@ -39,7 +39,7 @@ public abstract class DatabaseHelper extends RoomDatabase {
         public void onCreate(@NonNull SupportSQLiteDatabase db){
             databaseWriteExecutor.execute(()->{
                 UserDoa doa= INSTANCE.userDao();
-
+                doa.deleteAll();
                 User user1=new User("sahar","12345");
                 doa.insert(user1);
             });

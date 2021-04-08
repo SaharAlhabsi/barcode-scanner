@@ -5,18 +5,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.databoat.barcodescanner.data.User;
-import com.databoat.barcodescanner.data.userViewModel;
-import com.google.android.material.textfield.TextInputLayout;
+import com.databoat.barcodescanner.data.UserViewModel;
 
 public class LoginActivity extends AppCompatActivity {
+    private UserViewModel userViewModel;
     EditText username;
     EditText password;
 
@@ -26,9 +23,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+       // userViewModel=new ViewModelProvider(this).get(UserViewModel.class);
 //
 //        setupListeners();
-//        userViewModel umodel;
+//        UserViewModel umodel;
 //        setupUI();
         User user1 = new User("sahar", "12345");
         username = findViewById(R.id.username);

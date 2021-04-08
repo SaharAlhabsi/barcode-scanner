@@ -2,6 +2,7 @@ package com.databoat.barcodescanner.data;
 
 import android.content.Context;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Database;
 import androidx.room.Entity;
 import androidx.room.Index;
@@ -21,9 +22,13 @@ import java.util.concurrent.Executors;
 
 public class User {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id;
 
+    @ColumnInfo(name = "name")
     private String name;
+
+    @ColumnInfo(name = "password")
     private String password;
 
     public int getId() {
